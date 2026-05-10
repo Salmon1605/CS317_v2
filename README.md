@@ -32,11 +32,6 @@ Pipeline augmentation hướng tới:
 - Corruption benchmark giúp so sánh khả năng chịu nhiễu của các mô hình.
 - Pipeline tạo dữ liệu theo mức độ (severity) để đo đường cong hiệu năng.
 
-### Liên quan tới FastSAM và MobileSAM
-
-- FastSAM và MobileSAM cần độ ổn định cao khi inference trên ảnh chất lượng thấp.
-- Pipeline mô phỏng điều kiện thực tế (JPEG compression, noise, rotation, shear) để đánh giá segmentation fidelity.
-
 ---
 
 ## 2. Kiến trúc hệ thống
