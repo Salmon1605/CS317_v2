@@ -1,6 +1,6 @@
 # Augmentation Pipeline cho Segmentation Robustness Analysis
 
-Tài liệu này mô tả chi tiết pipeline augmentation trong [hazelnut_ad/augmentations.py](hazelnut_ad/augmentations.py). Pipeline được thiết kế cho nghiên cứu robustness của bài toán segmentation, mô phỏng corruptions thực tế và hỗ trợ đánh giá các mô hình như FastSAM và MobileSAM.
+Tài liệu này mô tả chi tiết pipeline augmentation trong [hazelnut_ad/augmentations.py](hazelnut_ad/augmentations.py)
 
 ---
 
@@ -12,25 +12,6 @@ Pipeline augmentation hướng tới:
 
 - Tạo tập dữ liệu mở rộng có tính đa dạng cao về hình học và nhiễu.
 - Mô phỏng các dạng corruption thường gặp trong thực tế (noise, JPEG artifacts, color space shift).
-- Chuẩn hoá quy trình tạo dữ liệu phục vụ robustness analysis và benchmarking.
-
-### Vai trò của augmentation trong computer vision
-
-- Tăng độ đa dạng của dữ liệu, giảm overfitting.
-- Tạo ra các biến thể có phân phối gần với môi trường thực tế.
-- Cho phép đánh giá độ ổn định của mô hình trước các biến đổi ảnh.
-
-### Vai trò trong image segmentation
-
-- Segmentation nhạy cảm với biến đổi biên, texture và màu sắc.
-- Augmentation giúp mô hình học được invariance với biến đổi hình học, noise và color shift.
-- Kiểm thử độ bền vững của mask prediction khi dữ liệu bị degradation.
-
-### Vai trò trong robustness analysis và corruption benchmark
-
-- Robutness analysis đo lường sự suy giảm chất lượng khi dữ liệu bị corruption.
-- Corruption benchmark giúp so sánh khả năng chịu nhiễu của các mô hình.
-- Pipeline tạo dữ liệu theo mức độ (severity) để đo đường cong hiệu năng.
 
 ---
 
@@ -479,22 +460,6 @@ Pipeline augmentation hướng tới:
 
 - Augmentation quá mạnh gây mất object.
 - JPEG noise ở quality thấp có thể làm mask không chính xác.
-
----
-
-## 15. Future Improvements
-
-- Bổ sung augmentation đồng bộ cho mask.
-- Hỗ trợ multiprocessing hoặc GPU acceleration.
-- Cho phép custom pipeline bằng YAML config.
-- Thêm logging nâng cao (MLflow, Weights&Biases).
-- Hỗ trợ online augmentation trong training loop.
-
----
-
-## 16. Conclusion
-
-Pipeline augmentation này cung cấp một nền tảng chuẩn hóa để đánh giá robustness cho segmentation. Thiết kế modular giúp mở rộng dễ dàng, metadata giúp tái lập thí nghiệm, và severity-based corruption hỗ trợ benchmark có hệ thống. Đây là nền tảng hữu ích cho cả nghiên cứu học thuật và hệ thống ML production.
 
 ---
 
