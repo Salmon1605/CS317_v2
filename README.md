@@ -428,41 +428,6 @@ Pipeline augmentation hướng tới:
 
 ---
 
-## 13. Góc nhìn Research và Robustness
-
-- Pipeline tạo benchmark có kiểm soát để đánh giá robustness.
-- Hỗ trợ ablation study bằng cách tắt/bật từng transform.
-- Có thể đo độ nhạy của model với từng loại corruption.
-- Phù hợp cho các nghiên cứu về segmentation stability.
-
----
-
-## 14. Advantages và Limitations
-
-### Strengths
-
-- Modular, dễ mở rộng.
-- Có metadata tracking.
-- Severity-based corruption rõ ràng.
-
-### Weaknesses
-
-- Xử lý tuần tự, không tối ưu tốc độ.
-- Không hỗ trợ mask augmentation đồng bộ (segmentation ground truth).
-- Resize cố định có thể làm mất chi tiết.
-
-### Scalability concerns
-
-- Dataset lớn sẽ tốn I/O và thời gian.
-- Không sử dụng multiprocessing hoặc GPU.
-
-### Possible failure cases
-
-- Augmentation quá mạnh gây mất object.
-- JPEG noise ở quality thấp có thể làm mask không chính xác.
-
----
-
 ## Ví dụ sử dụng
 
 ```python
